@@ -11,19 +11,17 @@ class App extends Component {
 
 handleClick = () => {
   this.setState({count: this.state.count + 1});
-  // this.setState((prevState)=>({count: prevState.count + 1}))
-  // this.setState((prevState)=>({count: prevState.count + 1}))
-
-   console.log('from handle click');
-
-
+  }
+handleClickMinus = () => {
+  this.setState({count: this.state.count - 1});
 }
-render () {
+  render () {
     return (
       <div className="App">
-        <h2>count</h2>
+        <button onClick={this.handleClickMinus}>-</button>
       
-      <button onClick={this.handleClick}>{this.state.count}</button>
+      <button >{this.state.count}</button>
+      <button onClick={this.handleClick}>+</button>
       </div>
     );
   }
