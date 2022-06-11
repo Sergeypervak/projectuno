@@ -4,36 +4,35 @@ class App extends Component {
  constructor(props) {
    super(props);
   this.state = {
-    count: 0,
-    someKey: false
+    posts: [],
+    loading: true,
+    comments: [],
   };
-}
-
-handleClickPlus = () => {
-  this.setState({count: this.state.count + 1});
-  }
-handleClickMinus = () => {
-  this.setState({count: this.state.count - 1});
 }
 
 componentDidMount () {
   console.log ('componentDidMount');
-  
+fetch ('https://jsonplaceholder.typicode.com/posts') 
+.then(response => response.json()) 
+.then(data => this.setState({posts: data, loading:false}))
 }
-
+componentDidUpdate() {
+  console.log ('didupdate')
+}
+componentWillUnmount() {
+  console.log ('willunmoount')
+}
 render () {
-    console.log('render', this.state.count)
     return (
       <div className="App">
-        <button onClick={this.handleClickMinus}>-</button>
-      
-      <button  >{this.state.count}</button>
-      <button onClick={this.handleClickPlus}>+</button>
+     {this.state.loading ? <h3>loading...</h3> : 
+     <h3>{
+      this.state.posts.length
+      } was loaded</h3> }
       </div>
     );
   }
   
-  
-}
+  }
 
 export default App;
