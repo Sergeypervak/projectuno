@@ -24,6 +24,10 @@ handleStop = () => {
   clearInterval(this.counterId);
 } 
 
+handleReset =() => {
+  this.setState({isCounting: false, count: 0})
+  clearInterval(this.counterId);
+}
 render () {
     return (
       <div className="App">
