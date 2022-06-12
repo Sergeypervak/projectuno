@@ -17,9 +17,9 @@ state = {
 render () {
     return (
       <div className="App">
-         <h2>{this.state.posts[0].name}</h2>
-         <h2>{this.state.posts[1].name}</h2>
-         <h2>{this.state.posts[2].name}</h2>
+        {this.state.posts.map(post => 
+          (<h2 key={post.id}>{post.name}</h2>)
+          )}
 
      </div>
   );
