@@ -13,9 +13,10 @@ handleSomething = () => {
   console.log('App.jsx done');
 }
 render () {
-    return (
+  const {posts} = this.state
+  return (
       <div className="App">
-       <Posts posts={this.state.posts} krot={this.handleSomething}/>
+       <Posts posts={posts} krot={this.handleSomething}/>
 
      </div>
   );
