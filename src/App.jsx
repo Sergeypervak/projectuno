@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-
+import {Posts} from './components/Posts'
 
 class App extends Component {
 state = {
@@ -17,9 +17,7 @@ state = {
 render () {
     return (
       <div className="App">
-        {this.state.posts.map(post => 
-          (<h2 key={post.id}>{post.name}</h2>)
-          )}
+       <Posts posts={this.state.posts}/>
 
      </div>
   );
