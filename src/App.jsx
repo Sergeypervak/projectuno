@@ -16,7 +16,7 @@ deletePost = (id) => {
 render () {
   const {posts} = this.state
   return (
-      <div className="App">
+      <div style={{color: "yellow"}} className="App">
        <Posts posts={posts} eraser={this.deletePost}/>
 
      </div>
