@@ -9,7 +9,8 @@ state = {
     {id: 'abc3', name: 'Senjor'},
 ],};
 
-deletePost = () => {
+deletePost = (id) => {
+  this.setState({posts: this.state.posts.filter(post => post.id !== id)})
   
 }
 render () {
