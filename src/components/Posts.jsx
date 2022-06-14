@@ -4,7 +4,7 @@ export function Posts (props)  {
     return <div>
 {
     props.posts.map(post =>(
-        <Post key={post.id} name={post.name} krot={props.krot}/>
+        <Post key={post.id} name={post.name} eraser={props.eraser}/>
     ))
 }
 

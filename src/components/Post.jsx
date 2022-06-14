@@ -1,6 +1,6 @@
 export function Post (props)  {
-    const {krot, name} = props
-    return <h2 onClick={krot}>{name}</h2> 
+    const {name, eraser} = props
+    return <h2 >{name} {<button onClick={eraser}>delete</button>}</h2> 
 
     
 }

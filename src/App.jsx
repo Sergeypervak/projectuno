@@ -9,14 +9,14 @@ state = {
     {id: 'abc3', name: 'Senjor'},
 ],};
 
-handleSomething = () => {
-  console.log('App.jsx done');
+deletePost = () => {
+  
 }
 render () {
   const {posts} = this.state
   return (
       <div className="App">
-       <Posts posts={posts} krot={this.handleSomething}/>
+       <Posts posts={posts} eraser={this.deletePost}/>
 
      </div>
   );
