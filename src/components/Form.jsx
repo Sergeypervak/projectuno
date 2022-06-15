@@ -19,7 +19,7 @@ state = {
             <input 
             type="text" 
             name='firstName'
-            placeholder="firstName"  
+            placeholder="enter your name ..."  
             value={firstName} 
             onChange={this.handleChange}
         />    
