@@ -18,6 +18,19 @@ state = {
         }
     }
 
+    
+    validateEmail = () => {
+       
+        if (!/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+            this.state.email
+            ))
+       
+          alert("You have entered an invalid email address!")
+          
+      }   
+    
+   
+
     render() {
       const {firstName, email} = this.state;
       
@@ -37,7 +50,7 @@ state = {
             placeholder="enter your email ..."  
             value={email} 
             onChange={this.handleChange}
-           
+            onBlur={this.validateEmail}
         />    
         </div>
 
