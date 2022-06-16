@@ -12,6 +12,12 @@ state = {
         this.setState({[event.target.name]: event.target.value})
     }
 
+    validateName = () => {
+        if (this.state.firstName.length < 5) {
+            alert('Yonr name should be longer, then 6 symbols')
+        }
+    }
+
     render() {
       const {firstName, email} = this.state;
       
@@ -23,13 +29,15 @@ state = {
             placeholder="enter your name ..."  
             value={firstName} 
             onChange={this.handleChange}
-        />    
+            onBlur={this.validateName}
+       />    
          <input 
             type="email" 
             name='email'
             placeholder="enter your email ..."  
             value={email} 
             onChange={this.handleChange}
+           
         />    
         </div>
 
