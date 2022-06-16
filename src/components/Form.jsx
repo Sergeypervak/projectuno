@@ -4,7 +4,8 @@ class Form extends React.Component {
 state = { 
  firstName :'',
  email :'',
-
+ message : '',
+ select : '',
 }
 
 
@@ -13,7 +14,7 @@ state = {
     }
 
     validateName = () => {
-        if (this.state.firstName.length < 5) {
+        if (this.state.firstName.length < 3) {
             alert('Yonr name should be longer, then 6 symbols')
         }
     }
@@ -32,7 +33,7 @@ state = {
    
 
     render() {
-      const {firstName, email} = this.state;
+      const {firstName, email, message, select} = this.state;
       
       
       return <div>
@@ -51,7 +52,18 @@ state = {
             value={email} 
             onChange={this.handleChange}
             onBlur={this.validateEmail}
-        />    
+        />  
+        <br />
+        <textarea name="message" value={message} onChange={this.handleChange}/>
+        
+        
+        <select name="select" value={select} onChange={this.handleChange}>
+        <option value='null'></option>
+        <option value='1'>2</option>
+        <option value= '2' >1</option>
+        <option value='4'>3</option>
+        <option value='3'>4</option>
+         </select>
         </div>
 
     }
