@@ -7,6 +7,8 @@ state = {
  message : '',
  select : '',
  subscription: false ,
+ gender : '',
+
 }
 
 
@@ -57,7 +59,9 @@ state = {
             onBlur={this.validateEmail}
         />  
         <br />
-        <textarea name="message" value={message} onChange={this.handleChange}/>
+        <textarea name="message" 
+                  value={message} 
+                  onChange={this.handleChange}/>
         <br />
         
         <select name="select" value={select} onChange={this.handleChange}>
@@ -78,6 +82,14 @@ state = {
         />
         соглашение
    </label>
+   <br/>
+ 
+     <input type="radio" name="gender" 
+                         value="male" 
+                        onChange={this.handleChange}/> мужчина
+     <input type="radio" name="gender" 
+                         value="female"
+                        onChange={this.handleChange} /> женщина
     
         </div>
 
