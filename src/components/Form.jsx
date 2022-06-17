@@ -7,7 +7,7 @@ state = {
  message : '',
  select : '',
  subscription: false ,
- gender : '',
+ gender : "",
 
 }
 
@@ -38,7 +38,7 @@ state = {
    }
 
     render() {
-      const {firstName, email, message, select,subscription } = this.state;
+      const {firstName, email, message, select,subscription, gender } = this.state;
       
       
       return <div>
@@ -86,10 +86,10 @@ state = {
  
      <input type="radio" name="gender" 
                          value="male" 
-                        onChange={this.handleChange}/> мужчина
+                        onChange={this.handleChange} checked={gender === "male"}/> мужчина
      <input type="radio" name="gender" 
                          value="female"
-                        onChange={this.handleChange} /> женщина
+                        onChange={this.handleChange} checked={gender === "female"} /> женщина
     
         </div>
 
