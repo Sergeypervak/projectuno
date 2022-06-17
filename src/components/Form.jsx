@@ -6,6 +6,7 @@ state = {
  email :'',
  message : '',
  select : '',
+ subscription: false ,
 }
 
 
@@ -30,10 +31,12 @@ state = {
           
       }   
     
-   
+   handleCheckboxChange = (event) => {
+      this.setState({[event.target.name]:event.target.checked})
+   }
 
     render() {
-      const {firstName, email, message, select} = this.state;
+      const {firstName, email, message, select,subscription } = this.state;
       
       
       return <div>
@@ -55,15 +58,27 @@ state = {
         />  
         <br />
         <textarea name="message" value={message} onChange={this.handleChange}/>
-        
+        <br />
         
         <select name="select" value={select} onChange={this.handleChange}>
-        <option value='null'></option>
-        <option value='1'>2</option>
-        <option value= '2' >1</option>
-        <option value='4'>3</option>
+        <option value=''disabled></option>
+        <option value='1'>1</option>
+        <option value= '2' >2</option>
+        <option value='44'>3</option>
         <option value='3'>4</option>
          </select>
+        <br/>
+       
+    <label>
+    <input 
+        type="checkbox" 
+        name="subscription" 
+        checked={subscription} 
+        onChange={this.handleCheckboxChange} 
+        />
+        соглашение
+   </label>
+    
         </div>
 
     }
