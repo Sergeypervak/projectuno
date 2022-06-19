@@ -1,10 +1,10 @@
-import {SubscriptionForm} from './components/Form'
+import {FormWithRef} from './components/FormWithRef'
 
 
 function App() {
 return (
   <div className="App">
-  <SubscriptionForm />
+  <FormWithRef />
   </div>
 )
 
