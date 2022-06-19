@@ -7,30 +7,40 @@ constructor() {
       card:'',
       email:''
    }
- this.firstNameRef = React.createRef();
+ this.cardRef = React.createRef();
+ this.emailRef = React.createRef();
 }
 handleChange = (event) =>{
-    this.setState({[event.target.name]:event.target.value})
-}
-  
-componentDidMount() {
-console.log (this.firstNameRef)
+    this.setState(()=>({[event.target.name]:event.target.value}),()=>{
 
+        if (this.state.card.length === 16) {
+            this.emailRef.current.focus();
+        }
+    })
+}
+  handleEmail = (event) => {
+    this.setState({email: event.target.value})
+ }
+    
+
+componentDidMount() {
+console.log (this.cardRef)
+this.cardRef.current.focus();
 }
 
 render() {
-      const {email, firstName } = this.state;
+      const {email,card} = this.state;
       
       
       return <div>
           
         <input
-         type="text" 
-         name="firstName"
-         placeholder="firstName"
-         value={firstName}
+         type="number" 
+         name="card"
+         placeholder="card number"
+         value={card}
          onChange={this.handleChange}
-         ref={this.firstNameRef}
+         ref={this.cardRef}
         /> 
          
          
@@ -41,6 +51,7 @@ render() {
             placeholder="email"  
             value={email} 
             onChange={this.handleEmail}
+            ref={this.emailRef}
             />  
        {/* <br/>  
         <label>
