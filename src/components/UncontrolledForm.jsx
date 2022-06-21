@@ -9,16 +9,20 @@ constructor() {
 }
 handleSubmit = (event) => {
 event.preventDefault();
+if(this.cardRef.current.value.length < 16){
+  alert('card number contain 16 symbols');
+  return;
+}
 }
 
+
+
 render() {
-      
-      
       
       return <form onSubmit={this.handleSubmit}>
           
         <input
-         type="number" 
+         type="card" 
          name="card"
          placeholder="card number"
          ref={this.cardRef}
